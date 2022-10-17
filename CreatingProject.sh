@@ -17,12 +17,11 @@ dotnet new classlib -n "$Name".Database.Repositories
 
 cd ..
 
+dotnet sln add "$Name".Server/"$Name".Server.csproj
+dotnet sln add "$Name".Core/"$Name".Core.csproj
 dotnet sln add Database/"$Name".Database.Context/"$Name".Database.Context.csproj
 dotnet sln add Database/"$Name".Database.Models/"$Name".Database.Models.csproj
 dotnet sln add Database/"$Name".Database.Repositories/"$Name".Database.Repositories.csproj
-dotnet sln add "$Name".Core/"$Name".Core.csproj
-dotnet sln add "$Name".Server/"$Name".Server.csproj
-
 
 sed -i '5,6d' Database/"$Name".Database.Context/"$Name".Database.Context.csproj
 sed -i '5,6d' Database/"$Name".Database.Models/"$Name".Database.Models.csproj
